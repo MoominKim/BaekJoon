@@ -6,11 +6,11 @@
 #define MAX_V 100100
 using namespace std;
 int v, e, visited[MAX_V + 1], x, y, r;
-int scc[100100];
+int scc[MAX_V];
 vector<vector<int>> vt;
 vector<vector<int>> rvt;
 stack<int> st;
-int in[100100];
+int in[MAX_V];
 
 void dfs(int v) {
     visited[v] = true;
@@ -27,6 +27,7 @@ void func(int v, int c) {
     for (int next : rvt[v]) {
         if (visited[next])
             continue;
+            
         func(next, c);
     }
 }
